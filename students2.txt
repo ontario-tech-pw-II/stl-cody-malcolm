@@ -1,0 +1,7 @@
+John 25
+Amanda 35
+John 45
+Sarah  80
+Jessica 65
+Sarah 30
+John 70

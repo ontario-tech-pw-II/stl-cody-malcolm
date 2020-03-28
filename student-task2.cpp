@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <string>
-#include <list>
+#include <set>
 #include <fstream>
 
 using namespace std;
@@ -121,12 +121,11 @@ Student::~Student()
 int main()
 {
 
-	list<Student> c;
-	list<Student>::iterator i;
-	list<Student>::reverse_iterator j;
+	set<string> s;
+  set<string>::iterator i;
 
-	// Write your code for Task 1
-	ifstream fin("students1.txt");
+	// Write your code for Task 2
+	ifstream fin("students2.txt");
 
 	if (fin.fail()) {
 		cerr << "Unable to open the file." << endl;
@@ -138,28 +137,17 @@ int main()
 
 	while(fin>>name) {
 		fin >> grade;
-		i = c.begin();
-		while (i != c.end() && i->getgrade() < grade) {
-			++i;
-		}
-
-		c.insert(i,Student(name,grade));
+		if (grade < 50) {
+      s.insert(name);
+    }
 
 		delete name;
 	}
 
 	fin.close();
 
-	cout << "Ascending order: " << endl;
-	for (i = c.begin(); i != c.end(); ++i) {
+	for (i = s.begin(); i != s.end(); ++i) {
 		cout << *i << endl;
-	}
-
-	cout << endl;
-
-	cout << "Descending order: " << endl;
-	for (j = c.rbegin(); j != c.rend(); ++j) {
-		cout << *j << endl;
 	}
 
 }

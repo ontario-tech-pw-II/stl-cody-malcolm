@@ -1,0 +1,5 @@
+John 50
+Amanda 45
+Sarah 80
+Jessica 65
+Rex 60
